@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trains Schedule</title>
+</head>
+<body>
+  <div>
+    <h1>Trains Schedule</h1>
+    <input type="text" placeholder="Enter train ID" value={train.id} onChange={handleTrainChange} />
+    <button type="button" onClick={handleGetTrain}>Get Train</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Train ID</th>
+          <th>Train Name</th>
+          <th>Departure Time</th>
+          <th>Arrival Time</th>
+          <th>Price</th>
+          <th>Seat Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        {trains.map((train, index) => (
+          <tr key={index}>
+            <td>{train.id}</td>
+            <td>{train.name}</td>
+            <td>{train.departureTime}</td>
+            <td>{train.arrivalTime}</td>
+            <td>{train.price}</td>
+            <td>{train.seatAvailability}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
